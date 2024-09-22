@@ -8,6 +8,7 @@ dotenv.config();
 import { connectDB } from "./db/connectDB.js";
 
 import authRoutes from "./routes/auth.route.js";
+import router from "./routes/scores.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json()); // allows us to parse incoming requests:req.body
 app.use(cookieParser()); // allows us to parse incoming cookies
 
 app.use("/api/auth", authRoutes);
+app.use("/scores", router);
 
 app.get("/news", async (req, res) => {
   const cat = req.query.category;
@@ -41,5 +43,3 @@ app.listen(PORT, () => {
   connectDB();
   console.log(`Server is running on port: ${PORT}`);
 });
-
-
