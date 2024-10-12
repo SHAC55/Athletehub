@@ -1,41 +1,42 @@
-"use client"
-import React from 'react'
-import Nav from '../components/Nav'
-import axios from 'axios'
+"use client";
+import React, { useEffect, useState } from "react";
+import Nav from "../components/Nav";
+import { Link } from "react-router-dom";
+
+import axios from "axios";
 
 const Stats = () => {
-    const fetchapi = async() => {
-        try {
-            const response = await axios.get('https://cricbuzz-cricket.p.rapidapi.com/stats/v1/topstats/0', {
-                headers: {
-                    'x-rapidapi-key': 'c8898ea80bmshd1a2e398baf5ea2p12018bjsnf62d9d5525d0',
-                    'x-rapidapi-host': 'cricbuzz-cricket.p.rapidapi.com'
-                  }
-            });
-            const data = response.data
-            console.log(data)
-        } catch (error) {
-          
-        }
-    }
+  const match = {
+    teamA: {
+      name: "Team A",
+      score: "210/5",
+      overs: "18.3",
+    },
+    teamB: {
+      name: "Team B",
+      score: "180/7",
+      overs: "20",
+    },
+    status: "In Progress",
+    result: "",
+  };
+
   return (
     <>
-
-    <div>
-
-    <div>
-      <Nav/>
-    </div>
-
-    <div>
-        <button onClick={fetchapi}> CLICK</button>
-    </div>
-
-    </div>
-
+      <Link
+        to={"/Cricketscore"}
+        className="ml-20 cursor-pointer hover:text-blue-500"
+      >
+        cricket score
+      </Link>
+      <Link
+        to={"/footballscore"}
+        className="ml-20 cursor-pointer hover:text-blue-500"
+      >
+        Football Score
+      </Link>
     </>
-  )
+  );
+};
 
-}
-
-export default Stats
+export default Stats;

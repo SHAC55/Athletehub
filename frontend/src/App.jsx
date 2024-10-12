@@ -19,7 +19,12 @@ import Cricketnews from "./pages/Cricketnews";
 import Sports from "./components/Sports";
 import Footballnews from "./pages/Footballnews";
 import Tennisnews from "./pages/Tennisnews";
-
+import Cricketscore from "./pages/Cricketscore";
+import Odi from "./pages/Odi";
+import FirstClass from "./pages/FirstClass";
+import Test from "./pages/Test";
+import Twenty from "./pages/Twenty";
+import Football from "./pages/Football";
 
 // protect routes that require authentication
 const ProtectedRoute = ({ children }) => {
@@ -70,7 +75,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/News"
           element={
             <ProtectedRoute>
@@ -78,7 +83,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/Sports"
           element={
             <ProtectedRoute>
@@ -86,7 +91,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/Footballnews"
           element={
             <ProtectedRoute>
@@ -94,7 +99,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/Cricketnews"
           element={
             <ProtectedRoute>
@@ -102,19 +107,60 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/Tennisnews"
           element={
             <ProtectedRoute>
-              <Tennisnews/>
+              <Tennisnews />
             </ProtectedRoute>
           }
         />
-         <Route
+        <Route
           path="/Stats"
           element={
             <ProtectedRoute>
               <Stats />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/Cricketscore"
+          element={
+            <ProtectedRoute>
+              <Cricketscore />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/footballscore"
+          element={
+            <ProtectedRoute>
+              <Football />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/odi"
+          element={
+            <ProtectedRoute>
+              <Odi />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/firstclass"
+          element={
+            <ProtectedRoute>
+              <FirstClass />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/test" element={<Test />} />
+        <Route
+          path="/t-20"
+          element={
+            <ProtectedRoute>
+              <Twenty />
             </ProtectedRoute>
           }
         />
@@ -160,8 +206,6 @@ function App() {
             </RedirectAuthenticatedUser>
           }
         />
-
-        
 
         {/* catch all routes */}
         <Route path="*" element={<Navigate to="/" replace />} />
