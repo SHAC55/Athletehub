@@ -18,7 +18,7 @@ app.use(express.json()); // allows us to parse incoming requests:req.body
 app.use(cookieParser()); // allows us to parse incoming cookies
 
 app.use("/api/auth", authRoutes);
-app.use("/scores", router);
+app.use("/stats", router);
 
 app.get("/news", async (req, res) => {
   const cat = req.query.category;
