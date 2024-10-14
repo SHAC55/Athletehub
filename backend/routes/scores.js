@@ -1,9 +1,7 @@
 import express from "express";
-import { cricketAll, seriesList, football } from "../controllers/scoreboard.js";
+import { playerName } from "../controllers/scoreboard.js";
 
 const router = express.Router();
-router.get("/cricket/all", cricketAll);
-router.get("/cricket/series", seriesList);
-router.get("/soccer", football);
+router.get("/cricket/stats/:player_name", playerName);
 
 export default router;
